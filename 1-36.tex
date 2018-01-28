@@ -1,0 +1,51 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[latin1]{inputenc}
+
+\newcommand{\divides}{\bigm|}
+\newcommand{\ndivides}{%
+  \mathrel{\mkern.5mu % small adjustment
+    % superimpose \nmid to \big|
+    \ooalign{\hidewidth$\big|$\hidewidth\cr$\nmid$\cr}%
+  }%
+}
+
+\begin{document}
+
+ \begin{center}
+    \Large\textbf{1.36}
+ \end{center}
+
+Compute the value of $2^{(p-1)/2}$ (mod p) for every prime 3 $\leq$ p $<$ 20. Make a conjecture as to the possible values of $2^{(p-1)/2}$ (mod p) when p is prime and prove that your conjecture is correct.
+
+\begin{center}
+  $2^{(p-1)/2} = r$ (mod p)
+\end{center}
+
+\begin{table}[h!]
+  \begin{center}
+    \caption{3 $\leq$ $p$ $<$ 20}
+    \begin{tabular}{l|l}
+      $p$ & $r$  \\
+      \hline
+      3 & 2 \\
+      5 & 4 \\
+      7 & 1 \\
+      11 & 10 \\
+      13 & 12 \\
+      17 & 1 \\
+      19 & 18 \\
+    \end{tabular}
+  \end{center}
+\end{table}
+
+Conjecture: $r \equiv \pm1$ (mod p) where $p$ is prime.
+
+\bigskip
+
+Proof: Let $r = 2^{(p-1)/2}$. Then $r^2 = 2^{(p-1)}$ by simplification. Since 2 is prime, $p \ndivides 2$. Then by Fermat's Little Theorem, $r^2 = 2^{(p-1)} \equiv 1$ (mod p). Thus $x^2 \equiv 1$ (mod p). Now $r \equiv \pm1$ (mod p) by $1^2 = 1$ and $-1^2 = 1$.
+
+\end{document}
